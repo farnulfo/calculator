@@ -16,12 +16,6 @@ public class CalculatorTest {
 
   private Calculator calculator = new Calculator();
 
-  @Test
-  public void testCompareTo() {
-    //Assert.assertTrue(Calculator.Operator.RIGHT_PARENTHESIS.compareTo(Calculator.Operator.ADDITION) > 0);
-    //Assert.assertTrue(Calculator.Operator.RIGHT_PARENTHESIS.compareTo(Calculator.Operator.ADDITION) > 0);
-  }
-
   @Test(expected = IllegalArgumentException.class)
   public void testNull() {
 
@@ -34,8 +28,11 @@ public class CalculatorTest {
   public void testEmpty() {
 
     calculator.eval("");
-    // TODO review the generated test code and remove the default call to fail.
-    //fail("The test case is a prototype.");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testIllegalOperator() {
+    calculator.eval("123+23|");
   }
 
   @Test
