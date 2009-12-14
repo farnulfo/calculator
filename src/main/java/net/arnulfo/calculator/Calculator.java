@@ -143,9 +143,6 @@ public class Calculator {
             case '/':
               currentOp = Operator.DIVISION;
               break;
-            case '(':
-              currentOp = Operator.LEFT_PARENTHESIS;
-              break;
             case ')':
               currentOp = Operator.RIGHT_PARENTHESIS;
               break;

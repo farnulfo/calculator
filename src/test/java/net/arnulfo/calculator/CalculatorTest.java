@@ -35,6 +35,11 @@ public class CalculatorTest {
     calculator.eval("123+23|");
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void testIllegalOperande() {
+    calculator.eval("123+*23");
+  }
+
   @Test
   public void testSimpleInteger() {
     Assert.assertEquals(new BigInteger("123"), calculator.eval("123"));
